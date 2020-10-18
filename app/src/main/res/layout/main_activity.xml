@@ -1,8 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linearLayout">
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="116dp"
+        android:layout_height="29dp"
+        android:text="@string/amount"
+        android:layout_margin="@dimen/marginStart"
+        android:textColor="@color/pink_700"
+        tools:layout_conversion_absoluteHeight="30dp"
+        tools:layout_conversion_absoluteWidth="105dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <EditText
+        android:id="@+id/aValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/valorInicio"
+        android:inputType="numberDecimal"
+        android:layout_margin="@dimen/marginStart"
+        android:digits="@string/caracteresPermitidos"
+        android:imeOptions="actionDone"
+        android:textAlignment="viewEnd"
+        />
+
+    <TextView
+        android:id="@+id/fromCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fromCurrency"
+        android:layout_margin="@dimen/marginStart"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_margin="@dimen/marginStart">
+
+        <RadioGroup
+            android:id="@+id/botones1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/boton1"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/dollar"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/boton2"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:text="@string/euro"
+                />
+
+            <RadioButton
+                android:id="@+id/boton3"
+                android:layout_width="93dp"
+                android:layout_height="wrap_content"
+                android:text="@string/pound" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/imagen2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_dollar" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/toCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/toCurrecy"
+        android:layout_margin="@dimen/marginStart"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginStart"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/botones2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/boton4"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dollar" />
+
+            <RadioButton
+                android:id="@+id/boton5"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:text="@string/euro" />
+
+            <RadioButton
+                android:id="@+id/boton6"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/pound" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_pound" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ExchangeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exchange"
+        android:layout_margin="@dimen/marginStart"/>
 
 </LinearLayout>
