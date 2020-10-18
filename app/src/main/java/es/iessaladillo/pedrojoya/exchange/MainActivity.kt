@@ -61,7 +61,7 @@ import es.iessaladillo.pedrojoya.exchange.databinding.MainActivityBinding
             change()
             return true
         }
-        
+
         private fun validCaracters() {
             if(binding.aValue.text.matches(Regex(pattern = "[0-9]*\\.[0-9]*\\."))){
                 resetText()
@@ -99,7 +99,7 @@ import es.iessaladillo.pedrojoya.exchange.databinding.MainActivityBinding
             val toast:Toast
             if(fCurrency.symbol.equals(Currency.DOLLAR.symbol)){
                numero= tCurrency.toDollar(binding.aValue.text.toString().toDouble())
-               toast=Toast.makeText(this, "${binding.aValue.text}${fCurrency.symbol} = $numero${tCurrency.symbol}",Toast.LENGTH_SHORT)
+               toast=Toast.makeText(this, "${binding.aValue.text}${fCurrency.symbol} = ${String.format("%.2f",numero)}${tCurrency.symbol}",Toast.LENGTH_SHORT)
 
             }else{
                 numero= fCurrency.fromDollar(binding.aValue.text.toString().toDouble())
