@@ -98,12 +98,12 @@ import es.iessaladillo.pedrojoya.exchange.databinding.MainActivityBinding
             var numero:Double
             val toast:Toast
             if(fCurrency.symbol.equals(Currency.DOLLAR.symbol)){
-               numero= tCurrency.toDollar(binding.aValue.text.toString().toDouble())
+               numero= tCurrency.fromDollar(binding.aValue.text.toString().toDouble())
                toast=Toast.makeText(this, "${binding.aValue.text}${fCurrency.symbol} = ${String.format("%.2f",numero)}${tCurrency.symbol}",Toast.LENGTH_SHORT)
 
             }else{
-                numero= fCurrency.fromDollar(binding.aValue.text.toString().toDouble())
-                numero= tCurrency.toDollar(numero)
+                numero= fCurrency.toDollar(binding.aValue.text.toString().toDouble())
+                numero= tCurrency.fromDollar(numero)
                 toast=Toast.makeText(this, "${binding.aValue.text}${fCurrency.symbol} = ${String.format("%.2f",numero)}${tCurrency.symbol}",Toast.LENGTH_SHORT)
 
             }
